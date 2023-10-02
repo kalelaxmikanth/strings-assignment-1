@@ -1,0 +1,82 @@
+// strings assignment
+// 1
+def update_odd_positions(input_str):
+    updated_str = list(input_str)
+    for i in range(len(updated_str)):
+        if i % 2 != 0:
+            updated_str[i] = '#'
+    return ''.join(updated_str)
+
+# Test cases
+input_str1 = "Pbwcshkuiglhlds"
+output1 = update_odd_positions(input_str1)
+print(output1)  # Output: "P#w#s#k#i#l#l#s"
+
+input_str2 = "a"
+output2 = update_odd_positions(input_str2)
+print(output2)  # Output: "a"
+2
+def count_consonants(input_str):
+    consonants = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
+    count = 0
+    for char in input_str:
+        if char in consonants:
+            count += 1
+    return count
+
+# Test cases
+input_str3 = "pwians"
+output3 = count_consonants(input_str3)
+print(output3)  # Output: 4
+
+input_str4 = "abdc"
+output4 = count_consonants(input_str4)
+print(output4)  # Output: 3
+3
+def is_palindrome(input_str):
+    reversed_str = input_str[::-1]
+    return input_str == reversed_str
+
+# Test cases
+input_str5 = "abcde"
+output5 = is_palindrome(input_str5)
+print("Output:", "Yes" if output5 else "No")  # Output: No
+
+input_str6 = "abcdcba"
+output6 = is_palindrome(input_str6)
+print("Output:", "Yes" if output6 else "No")  # Output: Yes
+4
+def reverse_second_half(input_str):
+    if len(input_str) % 2 == 0:
+        midpoint = len(input_str) // 2
+        first_half = input_str[:midpoint]
+        second_half = input_str[midpoint:]
+        reversed_second_half = second_half[::-1]
+        return first_half + reversed_second_half
+    else:
+        return input_str
+
+# Test cases
+input_str7 = "abcdefgh"
+output7 = reverse_second_half(input_str7)
+print(output7)  # Output: "abcdhgfe"
+
+input_str8 = "pwians"
+output8 = reverse_second_half(input_str8)
+print(output8)  # Output: "pwisna"
+5
+def string_to_integer(input_str):
+    result = 0
+    for char in input_str:
+        digit = ord(char) - ord('0')
+        result = result * 10 + digit
+    return result
+
+# Test cases
+input_str9 = "3244"
+output9 = string_to_integer(input_str9)
+print(output9)  # Output: 3244
+
+input_str10 = "12"
+output10 = string_to_integer(input_str10)
+print(output10)  # Output: 12
